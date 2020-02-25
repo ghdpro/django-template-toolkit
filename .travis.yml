@@ -1,0 +1,17 @@
+language: python
+dist: bionic
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+env:
+  matrix:
+    - DJANGO='>=2.2,<3.0'
+    - DJANGO='>=3.0,<3.1'
+install:
+  - pip install django$DJANGO
+  - pip install coverage
+script:
+  - coverage run runtests.py
+after_success:
+  - coverage report
