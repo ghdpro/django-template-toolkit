@@ -1,0 +1,11 @@
+# Python
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# Coverage
+.coverage
+
+# JetBrains
+.idea
