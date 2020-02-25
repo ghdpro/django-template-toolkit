@@ -15,7 +15,7 @@ setup(
     long_description_content_type='text/x-rst',
     packages=find_packages(),
     install_requires=[
-        'django>=3',
+        'django>=2.2',
     ],
     python_requires='>=3.6',
     author='Gerard Krijgsman',
@@ -24,9 +24,11 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
+        'Framework :: Django :: 2.2',
         'Framework :: Django :: 3.0',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3 :: Only',

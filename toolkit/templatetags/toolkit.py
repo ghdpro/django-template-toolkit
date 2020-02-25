@@ -1,6 +1,7 @@
 """django-template-toolkit Tags & Filters"""
 
 from django import template
+from django import forms
 
 register = template.Library()
 
@@ -14,7 +15,15 @@ def spacer(value) -> str:
 @register.filter
 def field_css(field: object, css: str) -> object:
     """Rewrites CSS class attribute for a form field; also adds placeholder attribute"""
-    return field.as_widget(attrs={'class': css, 'placeholder': field.label})
+    attrs = {
+        'class': css
+    }
+    # Add placeholder if allowed by HTML specification for certain widget types
+    # (technically also "tel" and "search" but Django doesn't have widgets for those types)
+    if field.field.widget.__class__ in \
+            (forms.TextInput, forms.NumberInput, forms.EmailInput, forms.URLInput, forms.PasswordInput):
+        attrs['placeholder'] = field.label
+    return field.as_widget(attrs=attrs)
 
 
 @register.filter
@@ -23,7 +32,7 @@ def is_field(field: object, value: str = None):
     f = field.field.__class__.__name__.lower()
     if value is not None:
         return True if f == value else False
-    # value is None
+    # value is None, so return field name for debug purposes
     return f
 
 
