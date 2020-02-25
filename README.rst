@@ -23,5 +23,5 @@ Django >= 2.2 and Python >= 3.6 are supported.
 Documentation and examples will follow in the future. For now, to use this package in your
 Django project install it with :code:`pip` then add it to your :code:`INSTALLED_APPS` list
 in settings. You can then include the templates as :code:`{% include 'toolkit/forms/field.html' %}` (for example)
-and the template tags with :code:`{% load 'toolkit' %}`. For now see the source code for which
+and the template tags with :code:`{% load toolkit %}`. For now see the source code for which
 template tags & filters are available.
