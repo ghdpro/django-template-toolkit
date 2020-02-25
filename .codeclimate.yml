@@ -38,3 +38,5 @@ plugins:
     threshold: "C"
   sonar-python:
     enabled: true
+exclude_patterns:
+  - "toolkit/tests*"
