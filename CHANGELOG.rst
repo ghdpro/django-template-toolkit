@@ -1,6 +1,13 @@
 django-template-toolkit changelog
 =================================
 
+
+0.1.2 - 2020-03-10
+------------------
+
+- Added get_item filter to get value from dictionaries
+
+
 0.1.1 - 2020-02-25
 ------------------
 

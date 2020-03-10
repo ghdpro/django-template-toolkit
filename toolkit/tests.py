@@ -146,6 +146,19 @@ class ToolkitTestCase(SimpleTestCase):
         with self.assertRaises(IndexError):
             toolkit.csvlist(test, 1)
 
+    def test_get_item(self):
+        test = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+        # Existing keys
+        self.assertEqual(toolkit.get_item(test, 'a'), 1)
+        self.assertEqual(toolkit.get_item(test, 'c'), 3)
+        # Non-existent key
+        self.assertIsNone(toolkit.get_item(test, 'z'))
+        # Not a dict
+        with self.assertRaises(AttributeError):
+            toolkit.get_item(1, 'a')
+        with self.assertRaises(AttributeError):
+            toolkit.get_item('abc', 1)
+
     def test_get_absolute_url(self):
         model = TestObject()
         self.assertEqual(toolkit.get_absolute_url(model, 1), '/test/1')

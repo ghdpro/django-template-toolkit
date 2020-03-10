@@ -58,6 +58,12 @@ def csvlist(value: str, index: int) -> str:
     return str(value).split(',')[index]
 
 
+@register.filter
+def get_item(value: dict, key: str):
+    """Returns a value from a dictionary"""
+    return value.get(key, None)
+
+
 @register.simple_tag
 def get_absolute_url(obj, name, *args) -> str:
     """"Calls get_absolute_url() method on a model object with a name argument"""
