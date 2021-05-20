@@ -2,6 +2,13 @@ django-template-toolkit changelog
 =================================
 
 
+0.2.0 - 2021-05-20
+------------------
+
+- Bootstrap v5 compatibility for templates (dropped support for Bootstrap v4)
+- Django 3.2 compatibility
+
+
 0.1.3 - 2020-08-06
 ------------------
 

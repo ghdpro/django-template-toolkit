@@ -1,5 +1,5 @@
 {% load toolkit %}
-<div class="form-group row">
+<div{% if row_css %} class="{{ row_css }}"{% endif %}>
     {% if label %}<label class="col-form-label{{ label_css|spacer }}">{{ label }}</label>{% endif %}
     {% for field in fields %}
         {% if field_css %}<div class="{{ field_css|csvlist:forloop.counter0 }}">{% endif %}
