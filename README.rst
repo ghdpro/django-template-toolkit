@@ -1,10 +1,6 @@
 django-template-toolkit
 =======================
 
-.. image:: https://travis-ci.org/ghdpro/django-template-toolkit.svg?branch=master
-    :target: https://travis-ci.org/ghdpro/django-template-toolkit
-    :alt: Build Status
-
 .. image:: https://codecov.io/gh/ghdpro/django-template-toolkit/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/ghdpro/django-template-toolkit
     :alt: Test Coverage
